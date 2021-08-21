@@ -1,0 +1,116 @@
+:root {
+    --money-green: #10a010;
+    background-color: #DCDCDB;
+}
+
+body {
+    background-color: #DCDCDB;
+}
+
+.bg-money {
+    background-color: var(--money-green) !important;
+}
+
+/* ---------------------------------------------- */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 23%;
+    min-width: 210px;
+    box-shadow: 0 .5em 1.5em rgba(0, 0, 0, .1), 0 .125em .5em rgba(0, 0, 0, .15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    height: 10em;
+    background-color: #DCDCDB;
+    border-radius: 50%;
+    
+}
+
+.logo-text {
+    color: white;
+    font: 160% sans-serif;
+}
+
+.divider {
+    width: 80%;
+    background-color: white;
+}
+
+.nav {
+    width: 95%;
+}
+
+.nav-link:hover {
+    transition: 0.35s;
+    background-color: rgba(0, 0, 0, .15) !important;
+}
+
+.nav-link {
+    line-height: 1;
+    font-size: 1.3rem;
+    transition: 0.35s;
+}
+
+.nav-icon {
+    height: 17px;
+    width: 17px;
+    margin-right: 0.5rem;
+}
+
+#spacer {
+    height: 100%;
+    width: 23%;
+    min-width: 210px;
+}
+
+#main {
+    padding: 1%;
+    background-color: #DCDCDB;
+    margin-left: max(210px, 23%);
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 3fr 2fr;
+    gap: 10px;
+    height: 100vh;
+}
+
+.card {
+    box-shadow: 0 .5em 1.5em rgba(0, 0, 0, .1), 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.card.wide {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.card-body.currency-input {
+    width: 90%;
+}
+
+.currency-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown > .btn {
+    border-radius: 5px 0px 0px 5px;
+    background-color: var(--money-green) !important;
+}
+
+.currency-input > .input-group:not(:last-child) {
+    margin-bottom: 20px;
+}
