@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coli Sphericus</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦠</text></svg>">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div id="control-panel">
+        <button
+            class="control important-control"
+            onclick="startDrawing()">
+                Малюй!
+        </button>
+
+        <button class="control" onclick="stopDrawing()">Стоп!</button>
+
+        <button class="control" onclick="clearDrawing()">Очистити</button>
+
+        <div class="control">
+            <span>швидкість:</span>
+            <input class="control" id="speed" type="number" value="1"/>
+            <span>мм/с</span>
+        </div>
+
+        <div class="control">
+            <span>час:</span>
+            <input class="control" id="time" type="number" value="15"/>
+            <span>хв</span>
+        </div>
+
+        <button class="control" onclick="toggleParams()">Опції ▼</button>
+        <div id="paramList" class="param-list-wrapper hidden">
+            <ul class="param-list">
+                <li class="param"><input type="checkbox" id="param_bounded">
+                    Не виходити за межі
+                </input></li>
+                <li class="param"><input type="checkbox" id="param_wait">
+                    Дочекати закінчення росту колоній
+                </input></li>
+                <li class="param"><input type="checkbox" id="param_hungry">
+                    Голодні колонії
+                </input></li>
+                <li class="param">
+                    Генерувати дані:
+                </li>
+                <li class="param"><input type="checkbox" id="param_gen_St">
+                    S<sub>загальна</sub>(t)
+                </input></li>
+                <li class="param"><input type="checkbox" id="param_gen_Nt">
+                    N<sub>активних</sub>(t)
+                </input></li>
+                <li class="param"><input type="checkbox" id="param_gen_tt">
+                    t&nbsp;<sub>життя колоній</sub>(t)
+                </input></li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <canvas id="canvas" width="1000" height="1000">
+            HTMl5 not supported.
+        </canvas>
+    </main>
+
+    <script src="./paramlist.js"></script>
+
+    <script type="module">
+        import {default as init_wasm, CircleDrawer} from './wasm.js';
+        
+        var drawer;
+        
+        async function load_wasm() {
+            await init_wasm();
+            drawer = new CircleDrawer();
+        }
+        load_wasm();
+        
+        function step() {
+            drawer.draw();
+        }
+        
+        window.drawingIntervalObject = null;
+        window.startDrawing = function() {
+            drawer.set_speed(
+                Number.parseFloat(document.getElementById('speed').value)
+            );
+            if (window.drawingIntervalObject === null)
+                window.drawingIntervalObject = setInterval(step, 100);
+        };
+
+        window.stopDrawing = function() {
+            if (window.drawingIntervalObject !== null) {
+                clearInterval(window.drawingIntervalObject);
+                window.drawingIntervalObject = null;
+            }
+        };
+
+        window.clearDrawing = function() {
+            if (confirm("Точно очистити?"))
+                drawer.clear();
+        }
+    </script>
+</body>
+</html>
