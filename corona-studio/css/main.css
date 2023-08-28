@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 2.3vh;
+}
+
+body {
+    font-family: 'Montserrat', 'Moderpics', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    color: white;
+    width: 100%;
+    height: 4rem;
+    /*border-bottom: 0.01rem solid red;*/
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+}
+
+.logo-image {
+    height: 2.5rem;
+    padding-right: 0.3rem;
+}
+
+.logo-name {
+    font-size: 1.5rem;
+    align-self: flex-end;
+    line-height: 1.8rem;
+}
+
+.nav {
+    margin-left: auto;
+    display: flex;
+
+    padding-right: 1.5rem;
+}
+
+.nav-item > a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item:not(:last-child) {
+    margin-right: 1.5rem;
+}
+
+.nav-item > a:hover {
+    text-decoration: underline;
+}
+
+.first-screen-container {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.background-crown {
+    height: 60vh;
+}
+
+.slogan {
+    font-weight: 100;
+    font-size: 4rem;
+    padding-bottom: 3rem;
+}
+
+.btn-further {
+    height: 10vh;
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    background-color: black;
+    color: white;
+}
+
+.btn-further:hover {
+    cursor: pointer;
+}
+
+.btn-further .material-symbols-sharp {
+    font-size: 10rem;
+    font-weight: 100;
+    /*aspect-ratio: 1;*/
+    /*border: 1px solid white;*/
+    /*border-radius: 100%;*/
+}
+
+.arrow-down {
+    filter: invert(100%);
+    height: 15vh;
+}
+
+.about-us-container {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+}
+
+.about-us-header {
+    box-sizing: border-box;
+    padding: 1.5rem;
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.about-us-header_border {
+    border: 8px solid;
+    border-image: linear-gradient(180deg, #e5c063, #DAA520) 30;
+    /*border-right-color: #DAA520;*/
+    /*border-bottom-color: #DAA520;*/
+    box-sizing: border-box;
+    padding: 0 1rem;
+}
+
+.about-us-card-holder {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70%;
+}
+
+.splitter {
+    height: 70%;
+    border: 1px solid darkgoldenrod;
+}
+
+.card {
+    height: 90%;
+    border-radius: 7%;
+    /*overflow: hidden;*/
+    box-shadow: 0 5px 24px #e5c063;
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-us-card-holder .card {
+    width: 33%;
+}
+
+.card-icon-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .material-symbols-sharp {
+    font-size: 10rem;
+    color: #DAA520;
+}
+
+.card-text {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.card-subscript {
+    align-self: flex-end;
+    margin-right: 2rem;
+    font-size: 1.3rem;
+    border: 2px solid darkgoldenrod;
+    color: darkgoldenrod;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    transition: 0.2s;
+}
+
+.card-subscript:hover {
+    cursor: pointer;
+    color: white;
+    background-color: darkgoldenrod;
+}
+
+.card-subscript:active {
+    cursor: pointer;
+    color: white;
+    border-color: #e5c063;
+    background-color: #e5c063;
+}
+
+.our-team-container {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+}
+
+.our-team-header {
+    box-sizing: border-box;
+    padding: 1.5rem;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-align: end;
+}
+
+.our-team-header_border {
+    border: 8px solid;
+    border-image: linear-gradient(-30deg, #e5c063, #DAA520) 30;
+    /*border-right-color: #DAA520;*/
+    /*border-bottom-color: #DAA520;*/
+    box-sizing: border-box;
+    padding: 0 1rem;
+    margin-left: auto;
+}
+
+.our-team-card-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: calc(100% - 7rem);
+}
+
+.our-team-card-holder .card {
+    justify-content: flex-start;
+    border-radius: 1rem;
+    height: 80%;
+    width: 20%;
+}
+
+.our-team-card-subscript {
+    text-align: center;
+}
+
+.our-team-card-text {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.contact-us-container {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    height: 70%;
+    border-radius: 2rem;
+    /*overflow: hidden;*/
+    /*box-shadow: 0 5px 24px #e5c063;*/
+    border: 0.15rem solid #DAA520;
+    box-sizing: border-box;
+    padding: 4rem 3rem;
+    padding-bottom: 2rem;
+}
+
+.form-title {
+    font-weight: 700;
+    background-color: white;
+    border: 0.15rem solid #DAA520;
+    border-radius: 2rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', 'Moderpics', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 0.1rem #e5c063 solid;
+    margin-left: 0.6rem;
+    width: 100%;
+    padding: 0 0.2rem;
+}
+
+textarea {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', 'Moderpics', sans-serif;
+    border: 0.1rem #DAA520 solid;
+    width: 100%;
+    border-radius: 1rem;
+    height: 10rem;
+    resize: none;
+    padding: 0.5rem;
+}
+
+input[type="submit"] {
+    font-family: 'Montserrat', 'Moderpics', sans-serif;
+    /*font-weight: bold;*/
+    font-size: 2rem;
+    color: white;
+    background-color: #DAA520;
+    border: 0.15rem #DAA520 solid;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    margin: 0 auto;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+input[type="submit"]:hover {
+    background-color: darkgoldenrod;
+    border-color: darkgoldenrod;
+}
+
+label {
+    width: 100%;
+    display: flex;
+}
